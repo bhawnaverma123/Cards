@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Card Description</title>
+    <link rel="stylesheet" href="styl.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Card Description</h1>
+        <div class="card-detail">
+            <img id="card-image" src="" alt="Card Image">
+            <p id="description">Loading...</p>
+        </div>
+        <a href="index14824.html">Back to Cards</a>
+    </div>
+    <script>
+        // JavaScript to get the card number from the query string and show the description
+        const urlParams = new URLSearchParams(window.location.search);
+        const cardNumber = urlParams.get('card');
+        const descriptionElement = document.getElementById('description');
+        const cardImage = document.getElementById('card-image');
+        
+        // Example descriptions for poker cards
+        const descriptions = {
+            1: { text: 'Ace of Spades: The highest-ranking card in many poker games.', img: 'https://c7.alamy.com/comp/AERY9C/ace-of-spades-card-AERY9C.jpg' },
+            2: { text: 'King of Hearts: A face card known for its royal stature.', img: 'https://www.shutterstock.com/image-vector/king-hearts-playing-card-classic-260nw-2224891343.jpg' },
+            3: { text: 'Queen of Diamonds: A face card that represents a queen in the diamond suit.', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5p6ELYI6u0nbmZ1m-CWf5R6LyYP7FWQD5F4IIpqkzpvzdx2CtmmWWxJPmE8ZtWqcfsKk&usqp=CAU' },
+            4: { text: 'Jack of Clubs: A face card representing a jack in the club suit.', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCFSdSrpNVfuFoP0p3813u6dKBIxWABPFe8w&s' },
+            5: { text: '10 of Spades: A high-value card in the spade suit.', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2aPyGs5v77abygdDrQPEdiDwZMhHP8Web9w&s' },
+            6: { text: '9 of Hearts: A card with a value of 9 in the heart suit.', img: 'https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQcMvxWsy0saYuVv9Ljf6rB58sWLG3LNRQFkw&s' },
+            7: { text: '8 of Diamonds: A card with a value of 8 in the diamond suit.', img: 'https://c8.alamy.com/comp/AERX21/8-of-diamonds-card-AERX21.jpg' },
+            8: { text: '7 of Clubs: A card with a value of 7 in the club suit.', img: 'https://c8.alamy.com/comp/2EKNCBP/7-seven-of-clubs-playing-card-with-clipping-path-to-remove-background-and-shadow-3d-illustration-2EKNCBP.jpg' },
+            9: { text: '6 of Spades: A card with a value of 6 in the spade suit.', img: 'https://c8.alamy.com/comp/AERX17/6-of-spades-card-AERX17.jpg' },
+            10: { text: '5 of Hearts: A card with a value of 5 in the heart suit.', img: 'https://c8.alamy.com/comp/2A7PF5K/five-of-hearts-playing-card-on-white-background-2A7PF5K.jpg' },
+            11: { text: '4 of Diamonds: A card with a value of 4 in the diamond suit.', img: 'https://c8.alamy.com/comp/AERX08/4-of-diamonds-card-AERX08.jpg' },
+            12: { text: '3 of Clubs: A card with a value of 3 in the club suit.', img: 'https://c8.alamy.com/comp/2E6YDP4/3-three-of-clubs-playing-card-with-clipping-path-to-remove-background-and-shadow-3d-illustration-2E6YDP4.jpg' },
+        };
+        
+        const card = descriptions[cardNumber];
+        descriptionElement.textContent = card ? card.text : 'No description available.';
+        cardImage.src = card ? card.img : '';
+    </script>
+</body>
+</html>
